@@ -45,6 +45,7 @@ public class SignUp extends HttpServlet {
 
 		String page = "";
 
+<<<<<<< HEAD
 		session.setAttribute("signUpStatus", null); // for JSTL
 		
 		
@@ -59,6 +60,16 @@ public class SignUp extends HttpServlet {
 						
 						session.setAttribute("signUpStatus", "true"); //Pass value back to JSTL value
 						
+=======
+		if (request.getParameter("agreed") != null) {
+			if (!dao.check(newUser)) {
+				if (areaCodeLength == 3 && phoneNumberLength == 7) {
+					try {
+						areaCodeInt = Integer.parseInt(areaCode);
+						phoneNumberInt = Integer.parseInt(phoneNumber);
+						dao.insert(newUser, newPass, areaCodeInt, phoneNumberInt);
+						session.setAttribute("signUpSucess", signupSucess);
+>>>>>>> refs/remotes/origin/master
 						page = "login.jsp";
 						response.sendRedirect(page);
 					} catch (NumberFormatException ex) {

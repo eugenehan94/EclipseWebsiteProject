@@ -28,6 +28,7 @@ public class Login extends HttpServlet {
 		String user = request.getParameter("uname");
 		String pass = request.getParameter("pass");
 		HttpSession session = request.getSession();
+<<<<<<< HEAD
 		
 		session.setAttribute("wrongLogin", null); // for the JSTL
 		
@@ -42,6 +43,17 @@ public class Login extends HttpServlet {
 			response.sendRedirect("login.jsp");
 			
 			session.setAttribute("wrongLogin", "wrong"); // for the JSTL
+=======
+		if (dao.check(user, pass)) {
+
+			session.setAttribute("username", user);
+			response.sendRedirect("welcome.jsp");
+			
+		} else {
+			session.setAttribute("Wrong Login",
+					"We have trouble signing you in, you might be entering in the wrong password");
+			response.sendRedirect("login.jsp");
+>>>>>>> refs/remotes/origin/master
 
 		}
 
