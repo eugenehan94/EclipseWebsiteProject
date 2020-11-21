@@ -10,4 +10,7 @@ Some features in the code:
 4. All information is created, updated and retrieved from mySQL database
 5. Messages are shown if any information is entered incorrect
 
+
+Added JSTL to the code along side of the scriplet tags
+
 Once the user logs in, it welcomes them by the username. Currently haven't gave any functions to the links and buttons
