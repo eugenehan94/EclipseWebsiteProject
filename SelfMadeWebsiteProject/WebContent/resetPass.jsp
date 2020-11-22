@@ -12,7 +12,7 @@
 	<p1>Select a new password</p1>
 	<br> Hello ${user}
 	<form action="ResetPass" method="post">
-		Enter new password: <input type="text" name="newPass"> <input
+		Enter new password: <input type="text" name="newPass" required> <input
 			type="submit" value="Submit">
 	</form>
 
