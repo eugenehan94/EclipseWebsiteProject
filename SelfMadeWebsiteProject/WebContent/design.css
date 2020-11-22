@@ -29,6 +29,7 @@ body {
 	left: 350px;
 }
 
+/* Controls the error box that appears when submitted response is invalid*/
 .errorBox {
 	background-color: red;
 	display: inline-block;
