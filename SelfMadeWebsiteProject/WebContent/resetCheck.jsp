@@ -38,8 +38,11 @@
 		%>
 	</div>
 
-	<c:set var ="resetCheck" value="${ResetCheck}"></c:set>
 	
+	<!-- The following code is the JSTL version of the scriplet above -->
+	
+	<div class="errorBox">
+	<c:set var ="resetCheck" value="${ResetCheck}"></c:set>
 	<c:choose>
 	<c:when test = "${resetCheck == null }">
 	</c:when>
@@ -48,7 +51,7 @@
 	<c:remove var = "resetCheck"></c:remove>
 	</c:when>
 	</c:choose>
-	
+	</div>
 
 
 </body>

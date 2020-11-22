@@ -36,7 +36,7 @@
 		if (successful != null) {
 			out.println("You have successfully signed up");
 			session.removeAttribute("signUpSucess");
-			session.invalidate();
+
 		}
 
 		String passReset = (String) session.getAttribute("passReset");
@@ -50,26 +50,40 @@
 	<br>
 
 
-<!-- The follow code is for JSTL version for the above scriplet tags -->
+	<!-- The follow code is the JSTL version for the above scriplet tags -->
 
-	<c:set var="wrongLogin" value="${wrongLogin}"></c:set>
-	<c:set var="signUpSucess" value="${signUpStatus}"></c:set>
-	<c:choose>
-		<c:when test="${wrongLogin == null }">
-		</c:when>
-		<c:when test="${wrongLogin != null }">
+	<div class="errorBox">
+		<c:set var="wrongLogin" value="${wrongLogin}"></c:set>
+		<c:set var="signUpSucess" value="${signUpStatus}"></c:set>
+		<c:set var="passReset1" value="${resetStatus1}"></c:set>
+		
+		<c:choose>
+			<c:when test="${wrongLogin == null }">
+			</c:when>
+			<c:when test="${wrongLogin != null }">
 	 You may have entered in the wrong information. We are having troubles signing you in. 
 	 <c:remove var="wrongLogin"></c:remove>
-		</c:when>
-	</c:choose>
-	<c:choose>
-		<c:when test="${signUpSucess == null}">
-		</c:when>
-		<c:when test ="${signUpSucess != null}">
+			</c:when>
+		</c:choose>
+		
+		<c:choose>
+			<c:when test="${signUpSucess == null}">
+			</c:when>
+			<c:when test="${signUpSucess != null}">
 		You have successfully signed up.
-		<c:remove var = "signUpSucess"></c:remove>
-		</c:when>
-	</c:choose>
-	
+		<c:remove var="signUpSucess"></c:remove>
+			</c:when>
+		</c:choose>
+		
+		<c:choose>
+			<c:when test="${passReset1 == null}">
+			</c:when>
+			<c:when test="${passReset1 != null}">
+	You have successfully reset your password. JSTL
+	<c:remove var="passReset1"></c:remove>
+			</c:when>
+		</c:choose>
+
+	</div>
 </body>
 </html>

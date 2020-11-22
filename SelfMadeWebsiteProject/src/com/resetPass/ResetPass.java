@@ -10,8 +10,6 @@ import javax.servlet.http.HttpSession;
 
 import com.loginDao.DAO;
 
-
-
 @WebServlet("/ResetPass")
 public class ResetPass extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -38,11 +36,18 @@ public class ResetPass extends HttpServlet {
 		HttpSession session = request.getSession();
 		String user = (String) session.getAttribute("user");
 
+		session.setAttribute("resetStatus1", null); // used to control condition for JSTL
 		
+		if (pass != null) {
 		dao.update(user, pass);
-		session.setAttribute("passReset","You have successfully reset your password");
+		session.setAttribute("passReset", "You have successfully reset your password");
+		session.setAttribute("resetStatus1", "sucess");
 		response.sendRedirect("login.jsp");
-
+		}else {
+			
+		}
+		
+		
 	}
 
 }

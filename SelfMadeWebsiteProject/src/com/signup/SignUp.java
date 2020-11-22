@@ -36,8 +36,6 @@ public class SignUp extends HttpServlet {
 		String areaCode = request.getParameter("areaCode");
 		String phoneNumber = request.getParameter("phoneNumber");
 
-		String signupSucess = "true";
-
 		int areaCodeLength = areaCode.length();
 		int phoneNumberLength = phoneNumber.length();
 		int areaCodeInt;
@@ -50,20 +48,15 @@ public class SignUp extends HttpServlet {
 		if (request.getParameter("agreed") != null) {
 			if (!dao.check(newUser)) {
 				if (areaCodeLength == 3 && phoneNumberLength == 7) {
-					try {
+					
 						areaCodeInt = Integer.parseInt(areaCode);
 						phoneNumberInt = Integer.parseInt(phoneNumber);
 						dao.insert(newUser, newPass, areaCodeInt, phoneNumberInt);
-						session.setAttribute("signUpSucess", signupSucess);
+						session.setAttribute("signUpSucess", "success");
 
 						session.setAttribute("signUpStatus", "true"); // Pass value back to JSTL value
-
-					} catch (NumberFormatException ex) {
-
-						session.setAttribute("failedSignUp", "Please satisfy the criterias of the sign up");
-						page = "signUp.jsp";
-						response.sendRedirect(page);
-					}
+						response.sendRedirect("login.jsp");
+			
 
 				} else {
 					page = "signUp.jsp";

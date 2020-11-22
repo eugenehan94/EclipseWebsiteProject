@@ -41,6 +41,8 @@ public class ResetCheck extends HttpServlet {
 			session.setAttribute("Wrong info",
 					"We have trouble with reset, you might be entering in the wrong credentials");
 			response.sendRedirect("resetCheck.jsp");
+			session.setAttribute("ResetCheck", "wrong");
+			
 		}
 
 	}
