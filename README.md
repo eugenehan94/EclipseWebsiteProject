@@ -1,6 +1,6 @@
 # EclipseWebsiteProject
 
-A website created with Java servlets, JSP (CSS and HTML included) and mySQL.
+A website created with Java servlets, JSP, JSTL (CSS and HTML included) and mySQL.
 
 Some features in the code:
 
@@ -13,4 +13,4 @@ Some features in the code:
 
 Added JSTL to the code along side of the scriplet tags
 
-Once the user logs in, it welcomes them by the username. Currently haven't gave any functions to the links and buttons
+Once the user logs in, it welcomes them by the username. Currently links and buttons have no function.
