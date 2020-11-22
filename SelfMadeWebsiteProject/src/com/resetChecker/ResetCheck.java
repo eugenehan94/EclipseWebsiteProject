@@ -30,6 +30,7 @@ public class ResetCheck extends HttpServlet {
 
 		HttpSession session = request.getSession();
 		
+		session.setAttribute("ResetCheck", null);
 		
 		if (dao.check(user, areaCode, phoneNumber)) {
 

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,6 +38,17 @@
 		%>
 	</div>
 
+	<c:set var ="resetCheck" value="${ResetCheck}"></c:set>
+	
+	<c:choose>
+	<c:when test = "${resetCheck == null }">
+	</c:when>
+	<c:when test = "${resetCheck != null }">
+	Having troubles with resetting your password, please check your credentials.
+	<c:remove var = "resetCheck"></c:remove>
+	</c:when>
+	</c:choose>
+	
 
 
 </body>

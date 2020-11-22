@@ -30,6 +30,7 @@ public class Login extends HttpServlet {
 
 		session.setAttribute("wrongLogin", null); // for the JSTL
 
+
 		if (dao.check(user, pass)) {
 
 			session.setAttribute("username", user);
@@ -42,17 +43,6 @@ public class Login extends HttpServlet {
 
 			session.setAttribute("wrongLogin", "wrong"); // for the JSTL
 
-			if (dao.check(user, pass)) {
-
-				session.setAttribute("username", user);
-				response.sendRedirect("welcome.jsp");
-
-			} else {
-				session.setAttribute("Wrong Login",
-						"We have trouble signing you in, you might be entering in the wrong password");
-				response.sendRedirect("login.jsp");
-
-			}
 		}
 	}
 

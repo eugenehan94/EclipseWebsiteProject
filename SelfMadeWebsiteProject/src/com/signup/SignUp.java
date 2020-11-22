@@ -45,10 +45,8 @@ public class SignUp extends HttpServlet {
 
 		String page = "";
 
-<<<<<<< HEAD
 		session.setAttribute("signUpStatus", null); // for JSTL
-		
-		
+
 		if (request.getParameter("agreed") != null) {
 			if (!dao.check(newUser)) {
 				if (areaCodeLength == 3 && phoneNumberLength == 7) {
@@ -57,21 +55,9 @@ public class SignUp extends HttpServlet {
 						phoneNumberInt = Integer.parseInt(phoneNumber);
 						dao.insert(newUser, newPass, areaCodeInt, phoneNumberInt);
 						session.setAttribute("signUpSucess", signupSucess);
-						
-						session.setAttribute("signUpStatus", "true"); //Pass value back to JSTL value
-						
-=======
-		if (request.getParameter("agreed") != null) {
-			if (!dao.check(newUser)) {
-				if (areaCodeLength == 3 && phoneNumberLength == 7) {
-					try {
-						areaCodeInt = Integer.parseInt(areaCode);
-						phoneNumberInt = Integer.parseInt(phoneNumber);
-						dao.insert(newUser, newPass, areaCodeInt, phoneNumberInt);
-						session.setAttribute("signUpSucess", signupSucess);
->>>>>>> refs/remotes/origin/master
-						page = "login.jsp";
-						response.sendRedirect(page);
+
+						session.setAttribute("signUpStatus", "true"); // Pass value back to JSTL value
+
 					} catch (NumberFormatException ex) {
 
 						session.setAttribute("failedSignUp", "Please satisfy the criterias of the sign up");
@@ -92,7 +78,7 @@ public class SignUp extends HttpServlet {
 				response.sendRedirect("signUp.jsp");
 			}
 		} else {
-			
+
 			session.setAttribute("checkboxUnchecked", "Please agree to the terms and conditions");
 			response.sendRedirect("signUp.jsp");
 		}
