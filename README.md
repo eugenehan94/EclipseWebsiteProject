@@ -12,7 +12,6 @@ Whenever the user(s) logs in, resets their password and registers incorrectly, a
 
 Notes:
 I didn't convert this project the maven because I wanted to find the required dependency and JAR files. These files are included in the repository.
-
 I also included the scriptlet and JSTL tags, both styles function the same way, and one could be removed. Although, using scriptlet is not recommended anymore, I just wanted to test it out because it allows the usage of the core Java concept.
 
 
