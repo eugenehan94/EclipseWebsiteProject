@@ -1,4 +1,4 @@
-# EclipseWebsiteProject
+# Eclipse Website Project
 
 This project is created with Java servlets, JSP, JSTL, CSS and mySQL.
 
