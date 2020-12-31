@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<p1>Select a new password</p1>
+	<p>Select a new password</p>
 	<br> Hello ${user}
 	<form action="ResetPass" method="post">
 		Enter new password: <input type="text" name="newPass" required> <input

@@ -2,7 +2,6 @@ package com.signup;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,7 +40,7 @@ public class SignUp extends HttpServlet {
 		int areaCodeInt;
 		int phoneNumberInt;
 
-		String page = "";
+		
 
 		session.setAttribute("signUpStatus", null); // for JSTL
 
@@ -59,7 +58,7 @@ public class SignUp extends HttpServlet {
 			
 
 				} else {
-					page = "signUp.jsp";
+					
 					session.setAttribute("failedSignUp", "Please satisfy the criterias of the sign up");
 					response.sendRedirect("signUp.jsp");
 
