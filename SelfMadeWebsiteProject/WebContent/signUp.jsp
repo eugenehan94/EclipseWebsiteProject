@@ -6,30 +6,38 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link type="text/css" rel="stylesheet" href="design.css" />
+<script type="text/javascript" src="javascript.js"></script>
 </head>
 <body>
 	<%
-		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
 	%>
 
 	<ul>
 		<li><a href="home.jsp">Home</a></li>
 	</ul>
 
+<div> <!-- Form -->
+
 	<h1>Sign-up For A Profile</h1>
 	<form action="SignUp" method="post">
 
-		Enter new username: <input type="text" name="newUser"><br>
-		Enter new password: <input type="password" name="newPass"><br>
-		Enter phone number: <input type="text" name="areaCode"><input
-			type="text" name="phoneNumber"><br> <input
-			type="checkbox" name="agreed"> I have read the terms and
-		conditions <br> <input type="submit" value="Submit"><br>
+		<label>Enter new username: </label>
+		<input type="text" name="newUser"><br>
+		<label>Enter new password: </label>
+		<input type="password" name="newPass"><br>
+		<label>Enter phone number: </label>
+		<input type="text" name="areaCode">
+		<input type="text" name="phoneNumber"><br> 
+		<input type="checkbox" name="agreed"> I have read the <a href="#"
+			onclick="document.getElementById('myModal').style.display='block'">
+			terms and conditions</a> <br> 
+			<input type="submit" value="Submit"><br>
 	</form>
 
 	<div class="errorBox">
 		<%
-			String invalid = (String) session.getAttribute("failedSignUp");
+		String invalid = (String) session.getAttribute("failedSignUp");
 		if (invalid != null) {
 			out.println(invalid);
 			session.removeAttribute("failedSignUp");
@@ -49,5 +57,34 @@
 		%>
 	</div>
 
+
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+
+		<!-- Modal content -->
+		<div class="modal-content">
+			<span class="close"
+				onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+			
+			<h3>AGREEMENT TO TERMS</h3>
+			<p> These Terms and Conditions constitute a
+				legally binding agreement made between you, whether personally or on
+				behalf of an entity ("you") and [business entity name] ("we," "us"
+				or "our"), concerning your access to and use of the [website
+				name.com] website as well as any other media form, media channel,
+				mobile website or mobile application related, linked, or otherwise
+				connected thereto (collectively, the "Site"). You agree that by
+				accessing the Site, you have read, understood, and agree to be bound
+				by all of these Terms and Conditions. If you do not agree with all
+				of these Terms and Conditions, then you are expressly prohibited
+				from using the Site and you must discontinue use immediately.
+				Some more text............................................</p>
+
+		</div>
+		</div>
+		
+</div>		
+		
 </body>
 </html>

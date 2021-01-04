@@ -6,9 +6,9 @@
 <meta charset="ISO-8859-1">
 <title>Website Home Page</title>
 <link type="text/css" rel="stylesheet" href="design.css" />
+<script type = "text/javascript" src="javascript.js"></script>
 </head>
 <body>
-
 
 	<div class="header home">
 		<h1>Sign-in, Sign-up and Fogotten Password Project</h1>
@@ -21,6 +21,7 @@
 	<div class="footer">
 		<div class="copyright">Copyright &#9400;</div>
 	</div>
+
 
 </body>
 </html>
