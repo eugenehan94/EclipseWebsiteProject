@@ -30,7 +30,7 @@
 		<input type="text" name="areaCode">
 		<input type="text" name="phoneNumber"><br> 
 		<input type="checkbox" name="agreed"> I have read the <a href="#"
-			onclick="document.getElementById('myModal').style.display='block'">
+			id = "termsAndConditions">
 			terms and conditions</a> <br> 
 			<input type="submit" value="Submit"><br>
 	</form>
@@ -64,8 +64,7 @@
 
 		<!-- Modal content -->
 		<div class="modal-content">
-			<span class="close"
-				onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+			<span class="close">&times;</span>
 			
 			<h3>AGREEMENT TO TERMS</h3>
 			<p> These Terms and Conditions constitute a
