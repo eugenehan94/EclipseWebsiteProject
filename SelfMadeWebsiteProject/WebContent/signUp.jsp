@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Sign Up Page</title>
 <link type="text/css" rel="stylesheet" href="design.css" />
 <script type="text/javascript" src="javascript.js"></script>
 </head>
@@ -17,10 +17,14 @@
 		<li><a href="home.jsp">Home</a></li>
 	</ul>
 
-<div> <!-- Form -->
+ <div class = "signUpContainer"> <!-- Form -->
 
-	<h1>Sign-up For A Profile</h1>
-	<form action="SignUp" method="post">
+	<div class = "signUpContent">
+	
+	<h1 id = "signUpHeader">Sign-up For A Profile</h1>
+	
+	
+	<form action="SignUp" method="post" id = "signUpFormContent">
 
 		<label>Enter new username: </label>
 		<input type="text" name="newUser"><br>
@@ -32,7 +36,7 @@
 		<input type="checkbox" name="agreed"> I have read the <a href="#"
 			id = "termsAndConditions">
 			terms and conditions</a> <br> 
-			<input type="submit" value="Submit"><br>
+			<input type="submit" value="Submit" id= "signUpSubmitBtn"><br>
 	</form>
 
 	<div class="errorBox">
@@ -81,7 +85,10 @@
 				Some more text............................................</p>
 
 		</div>
-		</div>
+	</div>
+		
+		</div> <!-- div after container -->
+		
 		
 </div>		
 		
