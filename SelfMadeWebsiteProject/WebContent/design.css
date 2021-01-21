@@ -5,6 +5,56 @@ body {
 	margin: 0;
 }
 
+
+/*SignUp.jsp design and functions*/
+.signUpContainer, .loginContainer {
+	
+	display: flex;
+	justify-content: center;
+	min-height: 90vh;
+	align-items: center;
+	
+}
+
+.signUpContent, .loginContent {
+	background: #fff;
+	border-radius: 7px;
+	overflow: hidden;
+	flex: 0 0 60%;
+	box-shadow: 0 0 10px black;
+
+}
+
+#signUpHeader, #loginHeader {
+	
+	margin: 0px 0px 20px 0px;
+	background: #d3d3d3;
+	width: 100%;
+}
+
+#signUpFormContent, #loginFormContent {
+	padding: 0px 30px;
+	font-weight: 400;
+	font: 20px Arial, sans-serif;
+}
+
+#signUpSubmitBtn, #loginBtn {
+	background: #d89156;
+	color: #fff;
+	font: 20px Arial, sans-serif;
+	border: none;
+	padding: 0.25rem 0.5rem;
+	border-radius: 7px;
+	cursor: pointer;
+}
+#signUpSubmitBtn:hover, #loginBtn:hover {
+	color: #ffd000;
+	box-shadow: 0 0 2px black;
+}
+
+
+
+
 #homeLink {
 	font-size: 30px;
 	text-align: center;
@@ -12,11 +62,7 @@ body {
 	padding: 100px;
 }
 
-/* Move the reset password link on login page under the password textbox*/
-#linkMove {
-	position: relative;
-	left: 115px;
-}
+
 
 /*Move the area code label under the area code textbox */
 #AreaCode {
@@ -33,9 +79,11 @@ body {
 .errorBox {
 	background-color: red;
 	display: inline-block;
-	border-radius: 5px;
+	border-radius: 2px;
 	font: 20px Arial, sans-serif;
-	margin: 5px 5px;
+	
+	width: 100%;
+	text-align: center;
 }
 
 input[type=text], input[type=password] {

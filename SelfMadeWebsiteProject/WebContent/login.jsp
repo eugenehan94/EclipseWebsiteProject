@@ -15,12 +15,18 @@
 		<li><a href="home.jsp">Home</a>
 	</ul>
 
-	<h1>Sign In</h1>
-	<form action="Login">
+
+<div class = "loginContainer">
+
+	<div class = "loginContent">
+
+	<h1 id ="loginHeader">Sign In</h1>
+	
+	<form action="Login" id="loginFormContent">
 		Enter username : <input type="text" name="uname"><br>
 		Enter password : <input type="password" name="pass"><br>
-		<a href="resetCheck.jsp" id="linkMove">Reset your password</a> <br>
-		<input type="submit" value="Login">
+		<a href="resetCheck.jsp">Reset your password</a> <br>
+		<input type="submit" value="Login" id="loginBtn">
 	</form>
 
 	<div class="errorBox">
@@ -52,7 +58,7 @@
 
 	<!-- The follow code is the JSTL version for the above scriplet tags -->
 
-	<div class="errorBox">
+		<div class="errorBox">
 		<c:set var="wrongLogin" value="${wrongLogin}"></c:set>
 		<c:set var="signUpSucess" value="${signUpStatus}"></c:set>
 		<c:set var="passReset1" value="${resetStatus1}"></c:set>
@@ -84,6 +90,9 @@
 			</c:when>
 		</c:choose>
 
+		</div>
 	</div>
+</div>	
+
 </body>
 </html>
