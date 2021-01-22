@@ -15,16 +15,21 @@
 		<li><a href="home.jsp">Home</a>
 	</ul>
 
-	<form action="ResetCheck">
-		Enter Username: <input type="text" name="checkUser"><br>
-		Enter Phone Number <input type="text" name="areaCode" maxlength="3">
-		<input type="text" name="phoneNumber" maxlength="7"> <br>
-
-		<label id="AreaCode">Area code</label> <label id="Number">Number</label>
-
-		<br> <input type="submit" value="Continue">
+<div class = "resetCheckContainer">
+	<div class = "resetCheckContent">
+	
+	
+	<form action="ResetCheck" id="resetCheckForm">
+		<div id = "inputBoxContainer">
+			<label>Enter Username:</label> <input type="text" name="checkUser">
+		</div>
+		<div id = "inputBoxContainer">
+			<label>Enter Phone Number: </label> <input type="text" id="areaCodeInput" name="areaCode" maxlength="3">
+			<input type="text" name="phoneNumber" maxlength="7">
+		</div>
+		<input type="submit" value="Continue" id="resetCheckBtn">
 	</form>
-	<br>
+	
 
 	<div class="errorBox">
 		<%
@@ -38,21 +43,7 @@
 		%>
 	</div>
 
-	
-	<!-- The following code is the JSTL version of the scriplet above -->
-	
-	<div class="errorBox">
-	<c:set var ="resetCheck" value="${ResetCheck}"></c:set>
-	<c:choose>
-	<c:when test = "${resetCheck == null }">
-	</c:when>
-	<c:when test = "${resetCheck != null }">
-	Having troubles with resetting your password, please check your credentials.
-	<c:remove var = "resetCheck"></c:remove>
-	</c:when>
-	</c:choose>
 	</div>
-
-
+</div>
 </body>
 </html>
