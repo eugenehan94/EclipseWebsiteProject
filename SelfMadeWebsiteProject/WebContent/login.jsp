@@ -23,9 +23,15 @@
 	<h1 id ="loginHeader">Sign In</h1>
 	
 	<form action="Login" id="loginFormContent">
-		Enter username : <input type="text" name="uname"><br>
-		Enter password : <input type="password" name="pass"><br>
-		<a href="resetCheck.jsp">Reset your password</a> <br>
+		<div id = "inputBoxContainer">
+			<label>Enter username : </label><input type="text" name="uname"><br>
+		</div>
+		<div id = "inputBoxContainer">
+			<label>Enter password : </label><input type="password" name="pass"><br>
+		</div>
+		<div id = "inputBoxContainer">
+			<a href="resetCheck.jsp">Reset your password</a> <br>
+		</div>
 		<input type="submit" value="Login" id="loginBtn">
 	</form>
 
@@ -67,8 +73,8 @@
 			<c:when test="${wrongLogin == null }">
 			</c:when>
 			<c:when test="${wrongLogin != null }">
-	 You may have entered in the wrong information. We are having troubles signing you in. 
-	 <c:remove var="wrongLogin"></c:remove>
+				 You may have entered in the wrong information. We are having troubles signing you in. 
+				 <c:remove var="wrongLogin"></c:remove>
 			</c:when>
 		</c:choose>
 		

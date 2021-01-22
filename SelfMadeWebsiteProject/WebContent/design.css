@@ -7,7 +7,7 @@ body {
 
 
 /*SignUp.jsp design and functions*/
-.signUpContainer, .loginContainer {
+.signUpContainer, .loginContainer, .resetCheckContainer {
 	
 	display: flex;
 	justify-content: center;
@@ -16,7 +16,7 @@ body {
 	
 }
 
-.signUpContent, .loginContent {
+.signUpContent, .loginContent, .resetCheckContent {
 	background: #fff;
 	border-radius: 7px;
 	overflow: hidden;
@@ -32,13 +32,13 @@ body {
 	width: 100%;
 }
 
-#signUpFormContent, #loginFormContent {
+#signUpFormContent, #loginFormContent, #resetCheckForm {
 	padding: 0px 30px;
 	font-weight: 400;
 	font: 20px Arial, sans-serif;
 }
 
-#signUpSubmitBtn, #loginBtn {
+#signUpSubmitBtn, #loginBtn, #resetCheckBtn {
 	background: #d89156;
 	color: #fff;
 	font: 20px Arial, sans-serif;
@@ -46,13 +46,23 @@ body {
 	padding: 0.25rem 0.5rem;
 	border-radius: 7px;
 	cursor: pointer;
+	margin: 8px 2px;
 }
-#signUpSubmitBtn:hover, #loginBtn:hover {
+#signUpSubmitBtn:hover, #loginBtn:hover, #resetCheckBtn:hover {
 	color: #ffd000;
 	box-shadow: 0 0 2px black;
+	margin: 8px 2px;
+	text-decoration: none;
 }
 
-
+#inputBoxContainer{
+	padding: 10px;	
+	
+}
+/*Area code input of signUp.jsp*/
+#areaCodeInput{
+	width: 10%;
+}
 
 
 #homeLink {
@@ -64,16 +74,18 @@ body {
 
 
 
-/*Move the area code label under the area code textbox */
-#AreaCode {
-	position: relative;
-	left: 200px;
+input[type=text], input[type=password] {
+	box-sizing: border-box;
+	padding: 6px 10px;
+	border-radius: 4px;
+	outline: none;
+	margin-left: 20px;
 }
 
-#Number {
-	position: relative;
-	left: 350px;
+input[type=text]:focus, input[type=password]:focus {
+	border: 3px solid red;
 }
+
 
 /* Controls the error box that appears when submitted response is invalid*/
 .errorBox {
@@ -86,22 +98,7 @@ body {
 	text-align: center;
 }
 
-input[type=text], input[type=password] {
-	padding: 8px 15px;
-	margin: 8px 2px;
-	border-radius: 4px;
-}
 
-input[type=text]:focus, input[type=password]:focus {
-	border: 3px solid red;
-}
-
-input[type=submit], input[type=button] {
-	padding: 8px 12px;
-	text-decoration: none;
-	margin: 8px 2px;
-	cursor: pointer;
-}
 
 ul {
 	list-style-type: none;
@@ -208,7 +205,7 @@ li a:hover {
   width: 80%;
 }
 
-/* The Close Button */
+/* The Close Button of modal */
 .close {
   color: #aaaaaa;
   float: right;

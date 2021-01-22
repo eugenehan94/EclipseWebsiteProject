@@ -25,18 +25,30 @@
 	
 	
 	<form action="SignUp" method="post" id = "signUpFormContent">
-
-		<label>Enter new username: </label>
-		<input type="text" name="newUser"><br>
-		<label>Enter new password: </label>
-		<input type="password" name="newPass"><br>
+		
+		<div id = "inputBoxContainer">
+			<label>Enter new username: </label>
+			<input type="text" name="newUser"><br>
+		</div>
+		
+		<div id = "inputBoxContainer">
+			<label>Enter new password: </label>
+			<input type="password" name="newPass"><br>
+		</div>
+		
+		<div id = "inputBoxContainer">
 		<label>Enter phone number: </label>
-		<input type="text" name="areaCode">
+		<input type="text" name="areaCode" id = "areaCodeInput" maxlength="3">
 		<input type="text" name="phoneNumber"><br> 
+		</div>
+		
 		<input type="checkbox" name="agreed"> I have read the <a href="#"
 			id = "termsAndConditions">
 			terms and conditions</a> <br> 
+		
+		<div id = "inputBoxContainer">	
 			<input type="submit" value="Submit" id= "signUpSubmitBtn"><br>
+		</div>	
 	</form>
 
 	<div class="errorBox">
